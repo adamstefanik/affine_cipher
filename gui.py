@@ -11,8 +11,8 @@ from affine_cipher import (
 DARK_BG = "#202024"
 LIGHT_TXT = "#08AC2C"
 DARK_ENTRY = "#252A28"
-FONT = ("Consolas, Menlo", 13)
-HEADER_FONT = ("Consolas", 18, "bold")
+FONT = ("Consolas, Courier New, Arial", 13)
+HEADER_FONT = ("Consolas, Courier New, Arial", 18, "bold")
 
 
 class AffineCipherGUI(tk.Tk):
