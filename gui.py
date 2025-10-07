@@ -8,9 +8,9 @@ from affine_cipher import (
     DEFAULT_ALPHABET,
 )
 
-DARK_BG = "#202024"
+DARK_BG = "#2C2C31"
 LIGHT_TXT = "#08AC2C"
-DARK_ENTRY = "#252A28"
+DARK_ENTRY = "#FDFDFD"
 FONT = ("Consolas, Courier New, Arial", 13)
 HEADER_FONT = ("Consolas, Courier New, Arial", 18, "bold")
 
