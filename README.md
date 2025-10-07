@@ -21,11 +21,11 @@ git clone https://github.com/adamstefanik/affine_cipher.git
 cd affine_cipher
 ```
 2. Start the main file
-   ```
-   python main.py
-   ```
+```
+python main.py
+```
 3. (If you are on Linux and get an error about Tkinter, install it via  
-   `sudo apt install python3-tk`.)
+`sudo apt install python3-tk`.)
 
 ## Structure
 ```
