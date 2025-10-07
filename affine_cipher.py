@@ -19,8 +19,6 @@ def filter_input(text, alphabet=DEFAULT_ALPHABET):
             result += SPACE_MARKER
         elif c in alphabet:
             result += c
-        elif c in "0123456789" and c in alphabet:
-            result += c
     return result
 
 
