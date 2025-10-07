@@ -68,18 +68,18 @@ class AffineCipherGUI(tk.Tk):
         return t
 
     def create_widgets(self):
-        self.label("Key A", 50, 20)
-        self.label("Key B", 265, 20)
+        self.label("Key A", 45, 20)
+        self.label("Key B", 260, 20)
         self.key_a = self.entry(8, 50, 50, "5")
         self.key_a.bind("<KeyRelease>", lambda e: self.update_all())
         self.key_b = self.entry(8, 265, 50, "8")
         self.key_b.bind("<KeyRelease>", lambda e: self.update_all())
 
-        self.label("ENTER TEXT", 50, 95)
+        self.label("ENTER TEXT", 45, 95)
         self.input_text = self.text(32, 4, 50, 125)
         self.input_text.bind("<KeyRelease>", lambda e: self.update_all())
 
-        self.label("OUTPUT", 50, 220)
+        self.label("OUTPUT", 45, 220)
         self.output_text = self.text(32, 4, 50, 250, state=tk.DISABLED)
 
         self.encrypt_btn = tk.Button(
@@ -131,14 +131,14 @@ class AffineCipherGUI(tk.Tk):
         )
         self.info_label.place(x=50, y=375)
 
-        self.label("Alphabet:", 50, 400)
-        self.alphabet_label = self.text(32, 1, 50, 425, state=tk.DISABLED)
+        self.label("Alphabet:", 45, 400)
+        self.alphabet_label = self.text(32, 2, 50, 425, state=tk.DISABLED)
 
-        self.label("Ciphered Alphabet:", 50, 460)
-        self.ciphered_alpha_label = self.text(32, 1, 50, 485, state=tk.DISABLED)
+        self.label("Ciphered Alphabet:", 45, 480)
+        self.ciphered_alpha_label = self.text(32, 2, 50, 505, state=tk.DISABLED)
 
-        self.label("Filtered Input:", 50, 520)
-        self.filtered_label = self.text(32, 1, 50, 545, state=tk.DISABLED)
+        self.label("Filtered Input:", 45, 555)
+        self.filtered_label = self.text(32, 1, 50, 580, state=tk.DISABLED)
 
         self.update_all()
 
@@ -246,3 +246,8 @@ class AffineCipherGUI(tk.Tk):
         self.output_text.delete("1.0", tk.END)
         self.output_text.config(state=tk.DISABLED)
         self.update_alphabet_labels()
+
+
+if __name__ == "__main__":
+    app = AffineCipherGUI()
+    app.mainloop()
