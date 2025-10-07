@@ -3,7 +3,7 @@
 A simple Python application for encrypting and decrypting text using the affine cipher algorithm.  
 The project features an easy-to-use graphical user interface (GUI) built with Tkinter, allowing users to input text, set cipher keys, and view results instantly.
 
-![Alt text](assets/ui_screenshot.png)
+<img src="assets/ui_screenshot.png" width="450" height="250">
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Tkinter](https://img.shields.io/badge/Tkinter-8.6+-green.svg)
