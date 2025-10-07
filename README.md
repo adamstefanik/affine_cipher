@@ -3,7 +3,7 @@
 A simple Python application for encrypting and decrypting text using the affine cipher algorithm.  
 The project features an easy-to-use graphical user interface (GUI) built with Tkinter, allowing users to input text, set cipher keys, and view results instantly.
 
-![Alt text](.png)
+![Alt text](/affine_cipher/assets/ui_screenshot.png)
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
 ![Tkinter](https://img.shields.io/badge/Tkinter-8.6+-green.svg)
@@ -16,9 +16,7 @@ The project features an easy-to-use graphical user interface (GUI) built with Tk
 - **main.py** — allows you to launch the GUI by running `python main.py`
 
 ## How to Run
-
-1. Make sure you have Python 3 installed.
-2. Start the GUI application:
+1. Start the main file
    ```
    python main.py
    ```
@@ -30,13 +28,12 @@ The project features an easy-to-use graphical user interface (GUI) built with Tk
 affine_cipher/
 ├── pycache/
 ├── assets/
-│ └──ui_screenshot .png
-├── bg/
-│ ├──bg.png 
+│ └── ui_screenshot .png
 ├── gui.py
 ├── LICENSE
 ├── main.py
 ├── README.md
+├── requirements.txt
 ```
 
 
