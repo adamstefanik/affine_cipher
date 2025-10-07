@@ -8,9 +8,9 @@ from affine_cipher import (
     DEFAULT_ALPHABET,
 )
 
-DARK_BG = "#2C2C31"
+DARK_BG = "#222026"
 LIGHT_TXT = "#08AC2C"
-DARK_ENTRY = "#FDFDFD"
+DARK_ENTRY = "#222026"
 FONT = ("Consolas, Courier New, Arial", 13)
 HEADER_FONT = ("Consolas, Courier New, Arial", 18, "bold")
 
@@ -69,13 +69,13 @@ class AffineCipherGUI(tk.Tk):
 
     def create_widgets(self):
         self.label("Key A", 45, 20)
-        self.label("Key B", 260, 20)
+        self.label("Key B", 311, 20)
         self.key_a = self.entry(8, 50, 50, "5")
         self.key_a.bind("<KeyRelease>", lambda e: self.update_all())
-        self.key_b = self.entry(8, 265, 50, "8")
+        self.key_b = self.entry(8, 315, 50, "8")
         self.key_b.bind("<KeyRelease>", lambda e: self.update_all())
 
-        self.label("ENTER TEXT", 45, 95)
+        self.label("INPUT", 45, 95)
         self.input_text = self.text(32, 4, 50, 125)
         self.input_text.bind("<KeyRelease>", lambda e: self.update_all())
 
@@ -109,7 +109,7 @@ class AffineCipherGUI(tk.Tk):
             borderwidth=0,
             command=self.clear_fields,
         )
-        self.clear_btn.place(x=297, y=345)
+        self.clear_btn.place(x=298, y=345)
 
         self.decrypt_btn = tk.Button(
             self,
@@ -124,7 +124,7 @@ class AffineCipherGUI(tk.Tk):
             command=self.do_decrypt,
             state=tk.DISABLED,
         )
-        self.decrypt_btn.place(x=173, y=345)
+        self.decrypt_btn.place(x=174, y=345)
 
         self.info_label = tk.Label(
             self, text="", bg=DARK_BG, fg="red", font=("Consolas", 11), anchor="w"
@@ -138,7 +138,7 @@ class AffineCipherGUI(tk.Tk):
         self.ciphered_alpha_label = self.text(32, 2, 50, 505, state=tk.DISABLED)
 
         self.label("Filtered Input:", 45, 555)
-        self.filtered_label = self.text(32, 1, 50, 580, state=tk.DISABLED)
+        self.filtered_label = self.text(32, 2, 50, 580, state=tk.DISABLED)
 
         self.update_all()
 
