@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 from affine_cipher import (
     encrypt,
     decrypt,
@@ -11,6 +12,7 @@ from affine_cipher import (
 DARK_BG = "#222026"
 LIGHT_TXT = "#08AC2C"
 DARK_ENTRY = "#222026"
+BUTTON_BG = "#2b2b2b"
 FONT = ("Consolas, Courier New, Arial", 13)
 HEADER_FONT = ("Consolas, Courier New, Arial", 18, "bold")
 
@@ -82,49 +84,56 @@ class AffineCipherGUI(tk.Tk):
         self.label("OUTPUT", 45, 220)
         self.output_text = self.text(32, 4, 50, 250, state=tk.DISABLED)
 
-        self.encrypt_btn = tk.Button(
+        # Configure custom button style for macOS compatibility
+        style = ttk.Style()
+        style.theme_use("default")
+        style.configure(
+            "Custom.TButton",
+            background=BUTTON_BG,
+            foreground=LIGHT_TXT,
+            font=FONT,
+            borderwidth=1,
+            focuscolor="none",
+            relief="flat",
+            highlightthickness=1,
+            highlightbackground=LIGHT_TXT,
+            highlightcolor=LIGHT_TXT,
+        )
+        style.map(
+            "Custom.TButton",
+            background=[("active", "#5a5a5a"), ("pressed", "#5a5a5a")],
+            foreground=[("active", LIGHT_TXT)],
+            relief=[("pressed", "sunken")],
+        )
+
+        self.encrypt_btn = ttk.Button(
             self,
             text="ENCRYPT",
-            font=FONT,
+            style="Custom.TButton",
             width=7,
-            bg=DARK_ENTRY,
-            fg=LIGHT_TXT,
-            activebackground=DARK_BG,
-            activeforeground=DARK_BG,
-            borderwidth=0,
             command=self.do_encrypt,
             state=tk.DISABLED,
         )
         self.encrypt_btn.place(x=50, y=345)
 
-        self.clear_btn = tk.Button(
+        self.clear_btn = ttk.Button(
             self,
             text="CLEAR",
-            font=FONT,
+            style="Custom.TButton",
             width=7,
-            bg=DARK_ENTRY,
-            fg=LIGHT_TXT,
-            activebackground=DARK_BG,
-            activeforeground=DARK_BG,
-            borderwidth=0,
             command=self.clear_fields,
         )
-        self.clear_btn.place(x=298, y=345)
+        self.clear_btn.place(x=320, y=345)
 
-        self.decrypt_btn = tk.Button(
+        self.decrypt_btn = ttk.Button(
             self,
             text="DECRYPT",
-            font=FONT,
+            style="Custom.TButton",
             width=7,
-            bg=DARK_ENTRY,
-            fg=LIGHT_TXT,
-            activebackground=DARK_BG,
-            activeforeground=DARK_BG,
-            borderwidth=0,
             command=self.do_decrypt,
             state=tk.DISABLED,
         )
-        self.decrypt_btn.place(x=174, y=345)
+        self.decrypt_btn.place(x=185, y=345)
 
         self.info_label = tk.Label(
             self, text="", bg=DARK_BG, fg="red", font=("Consolas", 11), anchor="w"
