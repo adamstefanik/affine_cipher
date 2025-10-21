@@ -26,7 +26,7 @@ class AffineCipherGUI(tk.Tk):
         self.resizable(False, False)
         self.create_widgets()
 
-    def label(self, text, x, y, font=FONT, anchor="w"):
+    def label(self, text, x, y, font="Consolas 12 bold", anchor="w"):
         return tk.Label(
             self, text=text, bg=DARK_BG, fg=LIGHT_TXT, font=font, anchor=anchor
         ).place(x=x, y=y)
@@ -42,6 +42,7 @@ class AffineCipherGUI(tk.Tk):
             borderwidth=0,
             highlightthickness=1,
             highlightbackground=LIGHT_TXT,
+            highlightcolor=LIGHT_TXT,
             selectbackground=LIGHT_TXT,
             selectforeground=DARK_BG,
         )
@@ -62,6 +63,7 @@ class AffineCipherGUI(tk.Tk):
             borderwidth=0,
             highlightthickness=1,
             highlightbackground=LIGHT_TXT,
+            highlightcolor=LIGHT_TXT,
             selectbackground=LIGHT_TXT,
             selectforeground=DARK_BG,
         )
@@ -84,14 +86,14 @@ class AffineCipherGUI(tk.Tk):
         self.label("OUTPUT", 45, 220)
         self.output_text = self.text(32, 4, 50, 250, state=tk.DISABLED)
 
-        # Configure custom button style for macOS compatibility
+        # Configure custom button style
         style = ttk.Style()
         style.theme_use("default")
         style.configure(
             "Custom.TButton",
             background=BUTTON_BG,
             foreground=LIGHT_TXT,
-            font=FONT,
+            font="Consolas 12 bold",
             borderwidth=1,
             focuscolor="none",
             relief="flat",
@@ -136,7 +138,12 @@ class AffineCipherGUI(tk.Tk):
         self.decrypt_btn.place(x=185, y=345)
 
         self.info_label = tk.Label(
-            self, text="", bg=DARK_BG, fg="red", font=("Consolas", 11), anchor="w"
+            self,
+            text="",
+            bg=DARK_BG,
+            fg="red",
+            font=("Consolas", 12, "bold"),
+            anchor="w",
         )
         self.info_label.place(x=50, y=375)
 
