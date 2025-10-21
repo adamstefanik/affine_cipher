@@ -45,20 +45,13 @@ def check_key_a(a, alphabet):
 def encrypt(plain_text, a, b, alphabet=DEFAULT_ALPHABET):
     filtered = filter_input(plain_text, alphabet)
     cipher = ""
-    i = 0
-    while i < len(filtered):
-        if filtered[i : i + len(SPACE_MARKER)] == SPACE_MARKER:
-            cipher += SPACE_MARKER
-            i += len(SPACE_MARKER)
-            continue
-        char = filtered[i]
+    for char in filtered:
         idx = alphabet.find(char)
         if idx == -1:
-            i += 1
+            cipher += char  # For SPACE_MARKER or unknown chars
             continue
         c_idx = (a * idx + b) % len(alphabet)
         cipher += alphabet[c_idx]
-        i += 1
     return format_five(cipher)
 
 
@@ -66,20 +59,13 @@ def decrypt(cipher_text, a, b, alphabet=DEFAULT_ALPHABET):
     inv_a = modinv(a, len(alphabet))
     cipher_text = cipher_text.replace(" ", "")
     plain = ""
-    i = 0
-    while i < len(cipher_text):
-        if cipher_text[i : i + len(SPACE_MARKER)] == SPACE_MARKER:
-            plain += SPACE_MARKER
-            i += len(SPACE_MARKER)
-            continue
-        char = cipher_text[i]
+    for char in cipher_text:
         idx = alphabet.find(char)
         if idx == -1:
-            i += 1
+            plain += char
             continue
         p_idx = (inv_a * (idx - b)) % len(alphabet)
         plain += alphabet[p_idx]
-        i += 1
     return restore_spaces(plain)
 
 
