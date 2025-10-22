@@ -30,13 +30,13 @@ python main.py
 ## Structure
 ```
 affine_cipher/
-├── pycache/
 ├── assets/
-│ └── ui_screenshot .png
-├── gui.py
+│ └── ui_screenshot.png
 ├── LICENSE
-├── main.py
 ├── README.md
+├── affine_cipher.py
+├── gui.py
+├── main.py
 ```
 
 ## Dependencies
